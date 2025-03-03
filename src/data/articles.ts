@@ -15,6 +15,7 @@ export interface Article {
   likes: number;
   dislikes: number;
   comments: number;
+  trending?: boolean;
 }
 
 export const articles: Article[] = [
@@ -48,6 +49,7 @@ export const articles: Article[] = [
     likes: 245,
     dislikes: 12,
     comments: 89,
+    trending: true
   },
   {
     id: "2",
@@ -81,12 +83,13 @@ export const articles: Article[] = [
     likes: 892,
     dislikes: 145,
     comments: 367,
+    trending: true
   },
   {
     id: "3",
     title: "El Salvador's wild crypto experiment ends in failure",
     summary: "Three years after becoming the first country to adopt Bitcoin as legal tender, El Salvador's government officially abandons the initiative.",
-    category: "Finance & economics",
+    category: "Finance",
     source: {
       name: "Financial Times",
       logo: "/placeholder.svg",
@@ -114,6 +117,7 @@ export const articles: Article[] = [
     likes: 521,
     dislikes: 48,
     comments: 203,
+    trending: false
   },
   {
     id: "4",
@@ -147,12 +151,13 @@ export const articles: Article[] = [
     likes: 342,
     dislikes: 27,
     comments: 116,
+    trending: false
   },
   {
     id: "5",
     title: "AI unleashes a weird new genre of political communication",
     summary: "Political campaigns increasingly use AI-generated content that blends reality and fiction in concerning ways.",
-    category: "Culture",
+    category: "AI",
     source: {
       name: "Tech Observer",
       logo: "/placeholder.svg",
@@ -180,5 +185,36 @@ export const articles: Article[] = [
     likes: 678,
     dislikes: 54,
     comments: 231,
+    trending: true
   },
+  {
+    id: "6",
+    title: "Alcaraz Defeats Djokovic in Epic Wimbledon Final",
+    summary: "Carlos Alcaraz outplays Novak Djokovic in a thrilling five-set match to claim his second consecutive Wimbledon title.",
+    category: "Tennis",
+    source: {
+      name: "Sports Center",
+      logo: "/placeholder.svg",
+    },
+    publishedAt: "3h ago",
+    timeToRead: "5 min read",
+    imageUrl: "/placeholder.svg",
+    content: `
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in varius nisi. Vivamus finibus, eros non finibus bibendum, nisi ipsum tincidunt velit, at fringilla justo magna eu risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam posuere, metus eget auctor lacinia, nisl mi bibendum libero, in congue eros nunc quis risus.</p>
+      
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ac magna non metus facilisis vehicula. Donec et nisl vel libero varius imperdiet. Cras vestibulum, nisl eget maximus auctor, leo magna lobortis odio, et interdum mi nulla eu neque. Proin pulvinar lacus at dolor pretium, quis pulvinar nisi sagittis.</p>
+      
+      <p>Praesent tincidunt fringilla ipsum, vel blandit mi volutpat eu. Quisque varius, nisl ac facilisis sodales, velit felis malesuada nibh, id faucibus velit orci at nibh. Fusce vitae dui ac nibh mattis iaculis. Phasellus in magna vitae sem varius commodo ut at diam. Aliquam erat volutpat.</p>
+      
+      <p>Cras sit amet auctor metus. Nulla facilisi. Nulla facilisi. Quisque non felis bibendum, venenatis dui non, ultricies ante. Nam dignissim orci mi, at convallis magna tempus sed. Vivamus sodales nisi vestibulum, viverra magna eu, pharetra justo. Ut id sem feugiat, facilisis magna at, tincidunt felis. Suspendisse sit amet vulputate mi.</p>
+      
+      <p>Suspendisse condimentum odio ut dui ultrices, a molestie dui vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras placerat blandit dui, eu euismod velit volutpat facilisis. In ut arcu id nisi finibus aliquet. Donec ultrices metus eu eleifend tincidunt. Nulla facilisi. Aliquam luctus, velit a faucibus pulvinar, sem odio elementum nisi, vel malesuada risus nibh nec sem.</p>
+      
+      <p>Proin sit amet mi sit amet nibh commodo bibendum. Etiam in ultrices sapien. Donec eget enim eu ante blandit euismod. Nulla facilisi. Aliquam vel purus vitae magna faucibus dictum. Etiam finibus dui neque, nec gravida metus aliquam eu. In hac habitasse platea dictumst. Fusce fermentum auctor leo, eget euismod ex semper sit amet.</p>
+    `,
+    likes: 1245,
+    dislikes: 35,
+    comments: 423,
+    trending: true
+  }
 ];

@@ -6,14 +6,14 @@ import NewsCard from '../components/NewsCard';
 import { articles } from '../data/articles';
 
 const Index: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'forYou' | 'trending' | 'finance' | 'ai' | 'tech' | 'latest'>('forYou');
+  const [activeTab, setActiveTab] = useState<'forYou' | 'trending' | 'finance' | 'ai' | 'tennis' | 'latest'>('forYou');
 
   const displayedArticles = articles.filter((article) => {
     if (activeTab === 'forYou') return true;
     if (activeTab === 'trending') return article.trending;
     if (activeTab === 'finance') return article.category === 'Finance';
     if (activeTab === 'ai') return article.category === 'AI';
-    if (activeTab === 'tech') return article.category === 'Tech';
+    if (activeTab === 'tennis') return article.category === 'Tennis';
     if (activeTab === 'latest') return true;
     return true;
   });
@@ -70,12 +70,12 @@ const Index: React.FC = () => {
           </button>
           <button
             className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
-              activeTab === 'tech' ? 'text-foreground' : 'text-muted-foreground'
+              activeTab === 'tennis' ? 'text-foreground' : 'text-muted-foreground'
             }`}
-            onClick={() => setActiveTab('tech')}
+            onClick={() => setActiveTab('tennis')}
           >
-            Tech
-            {activeTab === 'tech' && (
+            Tennis
+            {activeTab === 'tennis' && (
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-t-full" />
             )}
           </button>
