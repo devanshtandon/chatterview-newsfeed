@@ -72,12 +72,13 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
             alt={article.title} 
             className="news-card-image w-full" 
             loading="lazy"
+            data-lovable-edit="article-image"
           />
           <div className="absolute top-2 left-2">
-            <span className="category-badge">{article.category}</span>
+            <span className="category-badge" data-lovable-edit="article-category">{article.category}</span>
           </div>
           <div className="absolute top-2 right-2">
-            <span className="bg-black/60 text-white px-2 py-1 rounded-full text-xs">
+            <span className="bg-black/60 text-white px-2 py-1 rounded-full text-xs" data-lovable-edit="article-time">
               {article.publishedAt}
             </span>
           </div>
@@ -88,12 +89,12 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
             <div className="w-6 h-6 rounded-full overflow-hidden mr-2">
               <img src={article.source.logo} alt={article.source.name} className="w-full h-full object-cover" />
             </div>
-            <span className="text-sm font-medium">{article.source.name}</span>
-            <span className="text-xs text-muted-foreground ml-2">• {article.timeToRead}</span>
+            <span className="text-sm font-medium" data-lovable-edit="article-source">{article.source.name}</span>
+            <span className="text-xs text-muted-foreground ml-2" data-lovable-edit="article-read-time">• {article.timeToRead}</span>
           </div>
           
-          <h2 className="news-card-title">{article.title}</h2>
-          <p className="news-card-summary">{article.summary}</p>
+          <h2 className="news-card-title" data-lovable-edit="article-title">{article.title}</h2>
+          <p className="news-card-summary" data-lovable-edit="article-summary">{article.summary}</p>
           
           <div className="flex justify-between items-center mt-4">
             <div className="flex items-center space-x-4">
@@ -102,6 +103,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
                   onClick={handleLike}
                   className={`p-1.5 rounded-full ${liked ? 'text-primary' : 'text-muted-foreground'}`}
                   aria-label="Like"
+                  data-lovable-edit="like-button"
                 >
                   <Heart size={16} className={liked ? 'fill-primary' : ''} />
                 </button>
@@ -113,6 +115,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
                   onClick={handleTalkToAI}
                   className="p-1.5 rounded-full text-muted-foreground"
                   aria-label="Talk to Claude"
+                  data-lovable-edit="talk-button"
                 >
                   <MessageCircle size={16} />
                 </button>
@@ -125,6 +128,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
                 onClick={handleBookmark}
                 className="p-1.5 rounded-full text-muted-foreground hover:text-foreground"
                 aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+                data-lovable-edit="bookmark-button"
               >
                 <Bookmark size={16} className={bookmarked ? 'fill-primary text-primary' : ''} />
               </button>
@@ -133,6 +137,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
                 onClick={handleShare}
                 className="p-1.5 rounded-full text-muted-foreground hover:text-foreground"
                 aria-label="Share"
+                data-lovable-edit="share-button"
               >
                 <Share2 size={16} />
               </button>

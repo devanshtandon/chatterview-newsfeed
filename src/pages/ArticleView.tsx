@@ -120,14 +120,15 @@ const ArticleView: React.FC = () => {
                 alt={article.title} 
                 className="w-full h-64 object-cover"
                 loading="lazy"
+                data-lovable-edit="article-detail-image"
               />
             </div>
 
             <div className="article-header mb-8">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
-                  <span className="category-badge">{article.category}</span>
-                  <span className="text-xs text-muted-foreground">{article.publishedAt} • {article.timeToRead}</span>
+                  <span className="category-badge" data-lovable-edit="article-detail-category">{article.category}</span>
+                  <span className="text-xs text-muted-foreground" data-lovable-edit="article-detail-meta">{article.publishedAt} • {article.timeToRead}</span>
                 </div>
                 
                 <div className="flex items-center gap-2">
@@ -135,6 +136,7 @@ const ArticleView: React.FC = () => {
                     onClick={handleBookmark}
                     className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                     aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+                    data-lovable-edit="article-bookmark-button"
                   >
                     <Bookmark size={18} className={bookmarked ? 'fill-primary text-primary' : ''} />
                   </button>
@@ -142,6 +144,7 @@ const ArticleView: React.FC = () => {
                     onClick={handleShare}
                     className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                     aria-label="Share"
+                    data-lovable-edit="article-share-button"
                   >
                     <Share2 size={18} />
                   </button>
@@ -149,22 +152,28 @@ const ArticleView: React.FC = () => {
                     onClick={handleListenClick}
                     className="p-2 rounded-full bg-secondary/50 hover:bg-secondary transition-colors"
                     aria-label="Listen"
+                    data-lovable-edit="article-listen-button"
                   >
                     <Headphones size={18} />
                   </button>
                 </div>
               </div>
               
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">{article.title}</h1>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4" data-lovable-edit="article-detail-title">{article.title}</h1>
               
               <div className="flex items-center mt-4">
                 <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full overflow-hidden mr-3">
-                    <img src={article.source.logo} alt={article.source.name} className="w-full h-full object-cover" />
+                    <img 
+                      src={article.source.logo} 
+                      alt={article.source.name} 
+                      className="w-full h-full object-cover"
+                      data-lovable-edit="article-source-logo" 
+                    />
                   </div>
                   <div>
-                    <div className="font-medium">{article.source.name}</div>
-                    <div className="text-xs text-muted-foreground">{article.publishedAt}</div>
+                    <div className="font-medium" data-lovable-edit="article-source-name">{article.source.name}</div>
+                    <div className="text-xs text-muted-foreground" data-lovable-edit="article-published-time">{article.publishedAt}</div>
                   </div>
                 </div>
               </div>
@@ -174,6 +183,7 @@ const ArticleView: React.FC = () => {
               <div 
                 className="article-content text-foreground leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: article.content }}
+                data-lovable-edit="article-content"
               />
             </div>
             
@@ -185,31 +195,33 @@ const ArticleView: React.FC = () => {
                     liked ? 'text-primary bg-primary/10' : 'hover:bg-secondary'
                   }`}
                   aria-label="Like"
+                  data-lovable-edit="article-like-button"
                 >
                   <Heart size={20} className={liked ? 'fill-primary' : ''} />
                 </button>
                 <button 
                   className="p-2 rounded-full hover:bg-secondary transition-colors duration-200"
                   aria-label="Comment"
+                  data-lovable-edit="article-comment-button"
                 >
                   <MessageCircle size={20} />
                 </button>
               </div>
               
               <div className="text-sm text-muted-foreground">
-                <span>{likes} likes</span>
+                <span data-lovable-edit="article-like-count">{likes} likes</span>
                 <span className="mx-2">•</span>
-                <span>{article.comments} comments</span>
+                <span data-lovable-edit="article-comment-count">{article.comments} comments</span>
               </div>
             </div>
 
             <div className="mt-12">
-              <h2 className="text-xl font-bold mb-4">Related Articles</h2>
+              <h2 className="text-xl font-bold mb-4" data-lovable-edit="related-articles-heading">Related Articles</h2>
               <div className="grid grid-cols-1 gap-4">
                 {articles.filter(a => a.id !== article.id && a.category === article.category).slice(0, 2).map(relatedArticle => (
                   <div key={relatedArticle.id} className="p-4 rounded-xl bg-secondary/30 hover:bg-secondary/50 transition-colors cursor-pointer" onClick={() => navigate(`/article/${relatedArticle.id}`)}>
-                    <h3 className="font-medium mb-1">{relatedArticle.title}</h3>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{relatedArticle.summary}</p>
+                    <h3 className="font-medium mb-1" data-lovable-edit={`related-article-title-${relatedArticle.id}`}>{relatedArticle.title}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2" data-lovable-edit={`related-article-summary-${relatedArticle.id}`}>{relatedArticle.summary}</p>
                   </div>
                 ))}
               </div>

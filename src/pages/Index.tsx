@@ -29,6 +29,7 @@ const Index: React.FC = () => {
               activeTab === 'forYou' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('forYou')}
+            data-lovable-edit="tab-for-you"
           >
             For You
             {activeTab === 'forYou' && (
@@ -40,6 +41,7 @@ const Index: React.FC = () => {
               activeTab === 'trending' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('trending')}
+            data-lovable-edit="tab-trending"
           >
             Trending
             {activeTab === 'trending' && (
@@ -51,6 +53,7 @@ const Index: React.FC = () => {
               activeTab === 'finance' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('finance')}
+            data-lovable-edit="tab-finance"
           >
             Finance
             {activeTab === 'finance' && (
@@ -62,6 +65,7 @@ const Index: React.FC = () => {
               activeTab === 'ai' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('ai')}
+            data-lovable-edit="tab-ai"
           >
             AI
             {activeTab === 'ai' && (
@@ -73,6 +77,7 @@ const Index: React.FC = () => {
               activeTab === 'tennis' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('tennis')}
+            data-lovable-edit="tab-tennis"
           >
             Tennis
             {activeTab === 'tennis' && (
