@@ -50,7 +50,7 @@ const ArticleView: React.FC = () => {
       }
       
       toast('Article liked', {
-        description: 'We'll show more content like this',
+        description: "We'll show more content like this",
         duration: 2000,
       });
     }
@@ -70,7 +70,7 @@ const ArticleView: React.FC = () => {
       }
       
       toast('Article disliked', {
-        description: 'We'll show less content like this',
+        description: "We'll show less content like this",
         duration: 2000,
       });
     }
