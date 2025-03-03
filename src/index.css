@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -143,7 +142,7 @@
   }
 
   .article-content p {
-    @apply mb-4;
+    @apply mb-4 text-base md:text-lg;
   }
 
   .chat-bar {
@@ -175,11 +174,11 @@
   }
 
   .category-badge {
-    @apply inline-block px-2 py-0.5 text-xs rounded-full bg-accent-subtle text-theme-accent font-medium mr-2;
+    @apply inline-block px-2 py-0.5 text-xs rounded-full bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400 font-medium mr-2;
   }
 
   .time-badge {
-    @apply text-xs text-theme-muted;
+    @apply text-xs text-muted-foreground;
   }
 
   .article-source {
@@ -195,7 +194,7 @@
   }
 
   .article-time {
-    @apply text-xs text-theme-muted ml-2;
+    @apply text-xs text-muted-foreground ml-2;
   }
 
   .page-transition-enter {

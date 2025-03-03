@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ThumbsUp, ThumbsDown, MessageCircle, Share2 } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, MessageCircle, Share2, Bookmark } from 'lucide-react';
 import { Article } from '../data/articles';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -14,6 +14,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   const [dislikes, setDislikes] = useState(article.dislikes);
   const [liked, setLiked] = useState(false);
   const [disliked, setDisliked] = useState(false);
+  const [bookmarked, setBookmarked] = useState(false);
 
   const handleLike = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -61,6 +62,17 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
     }
   };
 
+  const handleBookmark = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    setBookmarked(!bookmarked);
+    
+    toast(bookmarked ? 'Removed from bookmarks' : 'Added to bookmarks', {
+      duration: 2000,
+    });
+  };
+
   const handleShare = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -73,7 +85,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
 
   return (
     <Link to={`/article/${article.id}`} className="block animate-fade-in">
-      <div className="news-card mb-4">
+      <div className="news-card mb-4 dark:bg-secondary/20 hover:dark:bg-secondary/30">
         <div className="relative">
           <img 
             src={article.imageUrl} 
@@ -85,62 +97,74 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
             <span className="category-badge">{article.category}</span>
           </div>
           <div className="absolute top-2 right-2">
-            <span className="time-badge bg-black/60 text-white px-2 py-1 rounded-full text-xs">
+            <span className="bg-black/60 text-white px-2 py-1 rounded-full text-xs">
               {article.publishedAt}
             </span>
           </div>
         </div>
         
         <div className="news-card-content">
-          <div className="article-source">
-            <div className="source-logo">
+          <div className="flex items-center mb-2">
+            <div className="w-6 h-6 rounded-full overflow-hidden mr-2">
               <img src={article.source.logo} alt={article.source.name} className="w-full h-full object-cover" />
             </div>
-            <span className="source-name">{article.source.name}</span>
-            <span className="article-time">{article.timeToRead}</span>
+            <span className="text-sm font-medium">{article.source.name}</span>
+            <span className="text-xs text-muted-foreground ml-2">• {article.timeToRead}</span>
           </div>
           
           <h2 className="news-card-title">{article.title}</h2>
           <p className="news-card-summary">{article.summary}</p>
           
-          <div className="news-card-actions">
-            <div className="flex items-center gap-1">
-              <button 
-                onClick={handleLike}
-                className={`like-button ${liked ? 'text-green-600 bg-green-50 dark:bg-green-900/30' : ''}`}
-                aria-label="Like"
-              >
-                <ThumbsUp size={18} />
-              </button>
-              <span className="text-xs text-muted-foreground">{likes}</span>
-              
-              <button 
-                onClick={handleDislike}
-                className={`dislike-button ml-2 ${disliked ? 'text-red-600 bg-red-50 dark:bg-red-900/30' : ''}`}
-                aria-label="Dislike"
-              >
-                <ThumbsDown size={18} />
-              </button>
-              <span className="text-xs text-muted-foreground">{dislikes}</span>
-            </div>
-            
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-1">
+          <div className="flex justify-between items-center mt-4">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center">
                 <button 
-                  className="comment-button"
+                  onClick={handleLike}
+                  className={`p-1.5 rounded-full ${liked ? 'text-green-600' : 'text-muted-foreground'}`}
+                  aria-label="Like"
+                >
+                  <ThumbsUp size={16} />
+                </button>
+                <span className="text-xs text-muted-foreground ml-1">{likes}</span>
+              </div>
+              
+              <div className="flex items-center">
+                <button 
+                  onClick={handleDislike}
+                  className={`p-1.5 rounded-full ${disliked ? 'text-red-600' : 'text-muted-foreground'}`}
+                  aria-label="Dislike"
+                >
+                  <ThumbsDown size={16} />
+                </button>
+                <span className="text-xs text-muted-foreground ml-1">{dislikes}</span>
+              </div>
+              
+              <div className="flex items-center">
+                <button 
+                  className="p-1.5 rounded-full text-muted-foreground"
                   aria-label="Comments"
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={16} />
                 </button>
-                <span className="text-xs text-muted-foreground">{article.comments}</span>
+                <span className="text-xs text-muted-foreground ml-1">{article.comments}</span>
               </div>
+            </div>
+            
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={handleBookmark}
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground"
+                aria-label={bookmarked ? 'Remove bookmark' : 'Add bookmark'}
+              >
+                <Bookmark size={16} className={bookmarked ? 'fill-primary text-primary' : ''} />
+              </button>
               
               <button 
                 onClick={handleShare}
-                className="p-2 rounded-full hover:bg-secondary transition-colors duration-200"
+                className="p-1.5 rounded-full text-muted-foreground hover:text-foreground"
                 aria-label="Share"
               >
-                <Share2 size={18} />
+                <Share2 size={16} />
               </button>
             </div>
           </div>

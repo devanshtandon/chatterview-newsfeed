@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
@@ -73,6 +74,35 @@ export default {
 					'accent-light': '#FDBA74',
 					'accent-subtle': '#FFF7ED'
 				}
+			},
+			typography: {
+				DEFAULT: {
+					css: {
+						color: 'hsl(var(--foreground))',
+						maxWidth: '100%',
+						p: {
+							color: 'hsl(var(--foreground))',
+						},
+						h1: {
+							color: 'hsl(var(--foreground))',
+						},
+						h2: {
+							color: 'hsl(var(--foreground))',
+						},
+						h3: {
+							color: 'hsl(var(--foreground))',
+						},
+						h4: {
+							color: 'hsl(var(--foreground))',
+						},
+						a: {
+							color: 'hsl(var(--primary))',
+						},
+						strong: {
+							color: 'hsl(var(--foreground))',
+						},
+					},
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
