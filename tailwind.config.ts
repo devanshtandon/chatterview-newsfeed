@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 import typography from "@tailwindcss/typography";
 
@@ -44,7 +43,8 @@ export default {
 				},
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					foreground: 'hsl(var(--accent-foreground))',
+					subtle: '#FFF7ED'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -71,7 +71,7 @@ export default {
 					'muted': '#8E9196',
 					'accent': '#F97316',
 					'accent-light': '#FDBA74',
-					'accent-subtle': '#FFF7ED',
+					'accent-subtle': '#FFF7ED'
 				}
 			},
 			borderRadius: {
