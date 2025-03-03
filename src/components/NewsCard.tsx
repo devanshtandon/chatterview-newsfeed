@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ThumbsUp, ThumbsDown, MessageCircle, Share2, Bookmark } from 'lucide-react';
+import { Heart, Bookmark, Share2, MessageCircle } from 'lucide-react';
 import { Article } from '../data/articles';
 import { Link } from 'react-router-dom';
 import { toast } from 'sonner';
@@ -11,9 +11,7 @@ interface NewsCardProps {
 
 const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   const [likes, setLikes] = useState(article.likes);
-  const [dislikes, setDislikes] = useState(article.dislikes);
   const [liked, setLiked] = useState(false);
-  const [disliked, setDisliked] = useState(false);
   const [bookmarked, setBookmarked] = useState(false);
 
   const handleLike = (e: React.MouseEvent) => {
@@ -27,36 +25,8 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
       setLikes(likes + 1);
       setLiked(true);
       
-      if (disliked) {
-        setDislikes(dislikes - 1);
-        setDisliked(false);
-      }
-      
       toast('Article liked', {
         description: "We'll show more content like this",
-        duration: 2000,
-      });
-    }
-  };
-
-  const handleDislike = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    if (disliked) {
-      setDislikes(dislikes - 1);
-      setDisliked(false);
-    } else {
-      setDislikes(dislikes + 1);
-      setDisliked(true);
-      
-      if (liked) {
-        setLikes(likes - 1);
-        setLiked(false);
-      }
-      
-      toast('Article disliked', {
-        description: "We'll show less content like this",
         duration: 2000,
       });
     }
@@ -79,6 +49,16 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
     
     toast('Share feature', {
       description: 'This feature would allow sharing the article',
+      duration: 2000,
+    });
+  };
+
+  const handleTalkToAI = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    toast('Talk to Claude', {
+      description: 'This would open the Claude chat interface',
       duration: 2000,
     });
   };
@@ -120,29 +100,19 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
               <div className="flex items-center">
                 <button 
                   onClick={handleLike}
-                  className={`p-1.5 rounded-full ${liked ? 'text-green-600' : 'text-muted-foreground'}`}
+                  className={`p-1.5 rounded-full ${liked ? 'text-primary' : 'text-muted-foreground'}`}
                   aria-label="Like"
                 >
-                  <ThumbsUp size={16} />
+                  <Heart size={16} className={liked ? 'fill-primary' : ''} />
                 </button>
                 <span className="text-xs text-muted-foreground ml-1">{likes}</span>
               </div>
               
               <div className="flex items-center">
                 <button 
-                  onClick={handleDislike}
-                  className={`p-1.5 rounded-full ${disliked ? 'text-red-600' : 'text-muted-foreground'}`}
-                  aria-label="Dislike"
-                >
-                  <ThumbsDown size={16} />
-                </button>
-                <span className="text-xs text-muted-foreground ml-1">{dislikes}</span>
-              </div>
-              
-              <div className="flex items-center">
-                <button 
+                  onClick={handleTalkToAI}
                   className="p-1.5 rounded-full text-muted-foreground"
-                  aria-label="Comments"
+                  aria-label="Talk to Claude"
                 >
                   <MessageCircle size={16} />
                 </button>

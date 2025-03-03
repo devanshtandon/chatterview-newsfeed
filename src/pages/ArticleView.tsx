@@ -1,10 +1,9 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { articles } from '../data/articles';
 import Header from '../components/Header';
 import ChatBar from '../components/ChatBar';
-import { Bookmark, Share2, ThumbsUp, ThumbsDown, MessageCircle, Headphones } from 'lucide-react';
+import { Bookmark, Share2, Heart, MessageCircle, Headphones } from 'lucide-react';
 import { toast } from 'sonner';
 
 const ArticleView: React.FC = () => {
@@ -26,7 +25,6 @@ const ArticleView: React.FC = () => {
       return;
     }
     
-    // Simulate loading
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 500);
@@ -116,7 +114,6 @@ const ArticleView: React.FC = () => {
       ) : (
         <div className="article-view p-4 md:p-6">
           <div className="max-w-3xl mx-auto">
-            {/* Image container */}
             <div className="rounded-xl overflow-hidden mb-6">
               <img 
                 src={article.imageUrl} 
@@ -126,7 +123,6 @@ const ArticleView: React.FC = () => {
               />
             </div>
 
-            {/* Article header */}
             <div className="article-header mb-8">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center">
@@ -174,7 +170,6 @@ const ArticleView: React.FC = () => {
               </div>
             </div>
             
-            {/* Article content */}
             <div className="prose dark:prose-invert max-w-none">
               <div 
                 className="article-content text-foreground leading-relaxed"
@@ -182,26 +177,16 @@ const ArticleView: React.FC = () => {
               />
             </div>
             
-            {/* Article actions */}
             <div className="mt-8 pt-4 border-t border-border flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <button 
                   onClick={handleLike}
                   className={`p-2 rounded-full transition-colors duration-200 ${
-                    liked ? 'text-green-600 bg-green-50 dark:bg-green-900/30' : 'hover:bg-secondary'
+                    liked ? 'text-primary bg-primary/10' : 'hover:bg-secondary'
                   }`}
                   aria-label="Like"
                 >
-                  <ThumbsUp size={20} />
-                </button>
-                <button 
-                  onClick={handleDislike}
-                  className={`p-2 rounded-full transition-colors duration-200 ${
-                    disliked ? 'text-red-600 bg-red-50 dark:bg-red-900/30' : 'hover:bg-secondary'
-                  }`}
-                  aria-label="Dislike"
-                >
-                  <ThumbsDown size={20} />
+                  <Heart size={20} className={liked ? 'fill-primary' : ''} />
                 </button>
                 <button 
                   className="p-2 rounded-full hover:bg-secondary transition-colors duration-200"
@@ -218,7 +203,6 @@ const ArticleView: React.FC = () => {
               </div>
             </div>
 
-            {/* Related articles */}
             <div className="mt-12">
               <h2 className="text-xl font-bold mb-4">Related Articles</h2>
               <div className="grid grid-cols-1 gap-4">

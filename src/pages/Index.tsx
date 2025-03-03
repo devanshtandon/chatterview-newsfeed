@@ -6,12 +6,15 @@ import NewsCard from '../components/NewsCard';
 import { articles } from '../data/articles';
 
 const Index: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'forYou' | 'trending' | 'latest'>('forYou');
+  const [activeTab, setActiveTab] = useState<'forYou' | 'trending' | 'finance' | 'ai' | 'tech' | 'latest'>('forYou');
 
-  const displayedArticles = articles.filter((_, index) => {
+  const displayedArticles = articles.filter((article) => {
     if (activeTab === 'forYou') return true;
-    if (activeTab === 'trending') return index % 2 === 0;
-    if (activeTab === 'latest') return index % 2 === 1;
+    if (activeTab === 'trending') return article.trending;
+    if (activeTab === 'finance') return article.category === 'Finance';
+    if (activeTab === 'ai') return article.category === 'AI';
+    if (activeTab === 'tech') return article.category === 'Tech';
+    if (activeTab === 'latest') return true;
     return true;
   });
 
@@ -20,9 +23,9 @@ const Index: React.FC = () => {
       <Header title="Newsfeed" />
       
       <div className="px-4 pt-4">
-        <div className="flex border-b border-border mb-4">
+        <div className="flex border-b border-border mb-4 overflow-x-auto hide-scrollbar">
           <button
-            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative ${
+            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
               activeTab === 'forYou' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('forYou')}
@@ -33,7 +36,7 @@ const Index: React.FC = () => {
             )}
           </button>
           <button
-            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative ${
+            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
               activeTab === 'trending' ? 'text-foreground' : 'text-muted-foreground'
             }`}
             onClick={() => setActiveTab('trending')}
@@ -44,13 +47,35 @@ const Index: React.FC = () => {
             )}
           </button>
           <button
-            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative ${
-              activeTab === 'latest' ? 'text-foreground' : 'text-muted-foreground'
+            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
+              activeTab === 'finance' ? 'text-foreground' : 'text-muted-foreground'
             }`}
-            onClick={() => setActiveTab('latest')}
+            onClick={() => setActiveTab('finance')}
           >
-            Latest
-            {activeTab === 'latest' && (
+            Finance
+            {activeTab === 'finance' && (
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-t-full" />
+            )}
+          </button>
+          <button
+            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
+              activeTab === 'ai' ? 'text-foreground' : 'text-muted-foreground'
+            }`}
+            onClick={() => setActiveTab('ai')}
+          >
+            AI
+            {activeTab === 'ai' && (
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-t-full" />
+            )}
+          </button>
+          <button
+            className={`pb-2 px-4 text-sm font-medium transition-colors duration-200 relative whitespace-nowrap ${
+              activeTab === 'tech' ? 'text-foreground' : 'text-muted-foreground'
+            }`}
+            onClick={() => setActiveTab('tech')}
+          >
+            Tech
+            {activeTab === 'tech' && (
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-t-full" />
             )}
           </button>

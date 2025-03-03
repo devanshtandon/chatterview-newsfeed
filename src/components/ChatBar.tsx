@@ -17,7 +17,7 @@ const ChatBar: React.FC<ChatBarProps> = ({ articleId }) => {
     if (!message.trim()) return;
     
     toast('Message sent', {
-      description: 'AI is processing your message...',
+      description: 'Claude is processing your message...',
       duration: 2000,
     });
     
@@ -41,7 +41,7 @@ const ChatBar: React.FC<ChatBarProps> = ({ articleId }) => {
             </div>
             <div className="bg-primary/5 p-3 rounded-lg rounded-tl-none max-w-[85%]">
               <p className="text-sm">
-                Hello! I'm your AI assistant. I've read this article and can help answer questions or provide additional context about this topic. What would you like to know?
+                Hello! I'm Claude, your AI assistant. I've read this article and can help answer questions or provide additional context about this topic. What would you like to know?
               </p>
             </div>
           </div>
@@ -63,7 +63,7 @@ const ChatBar: React.FC<ChatBarProps> = ({ articleId }) => {
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Ask AI about this article..."
+              placeholder="Talk to Claude about this article..."
               className="chat-input"
             />
             <button 
