@@ -139,7 +139,7 @@
   }
 
   .article-content {
-    @apply prose dark:prose-invert max-w-none;
+    @apply max-w-none text-foreground;
   }
 
   .article-content p {
