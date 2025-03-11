@@ -155,8 +155,8 @@ export const articles: Article[] = [
   },
   {
     id: "3",
-    title: "El Salvador's wild crypto experiment ends in failure",
-    summary: "Three years after becoming the first country to adopt Bitcoin as legal tender, El Salvador's government officially abandons the initiative.",
+    title: "[STUB] Financial News Article",
+    summary: "This is a placeholder for a financial news article about cryptocurrency and market trends.",
     category: "Finance",
     source: {
       name: "Financial Times",
@@ -164,23 +164,17 @@ export const articles: Article[] = [
     },
     publishedAt: "4h ago",
     timeToRead: "4 min read",
-    imageUrl: "/lovable-uploads/375cebe1-fcf9-4f47-9e27-4ebf7fa1e082.png",
+    imageUrl: "/placeholder.svg",
     content: `
-      <p>El Salvador has officially ended its controversial experiment with Bitcoin as legal tender, with President Nayib Bukele announcing the policy reversal in a nationally televised address on Tuesday.</p>
+      <h2>This is a stub article</h2>
       
-      <p>In 2021, El Salvador became the first country in the world to adopt the cryptocurrency as legal tender, requiring businesses to accept Bitcoin alongside the US dollar. The move was celebrated by crypto enthusiasts worldwide but criticized by economic experts and international financial organizations.</p>
+      <p>This is placeholder content for a financial news article. In a real implementation, this would contain actual news content about market trends, cryptocurrency developments, or other financial topics.</p>
       
-      <p>"While we still believe in the future of digital currencies, we must acknowledge that our implementation faced significant challenges that could not be overcome in the current global economic climate," Bukele said in his address.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in varius nisi. Vivamus finibus, eros non finibus bibendum, nisi ipsum tincidunt velit, at fringilla justo magna eu risus.</p>
       
-      <p>The administration invested approximately $375 million in Bitcoin purchases and infrastructure development, including the creation of a national digital wallet called "Chivo." According to government figures, the country's Bitcoin holdings are now worth approximately 40% less than their purchase value.</p>
+      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam posuere, metus eget auctor lacinia, nisl mi bibendum libero, in congue eros nunc quis risus.</p>
       
-      <p>The International Monetary Fund, which had repeatedly warned against the policy, welcomed the decision. "This returns El Salvador to a more stable monetary foundation and removes a significant source of fiscal and financial risk," an IMF spokesperson stated.</p>
-      
-      <p>Local business owners expressed mixed reactions. "The whole Bitcoin thing was always more trouble than it was worth for small businesses like mine," said Maria Hernandez, who owns a restaurant in San Salvador. "The technology was complicated, and most customers still wanted to use dollars anyway."</p>
-      
-      <p>Crypto investors and advocates expressed disappointment but acknowledged the implementation faced numerous obstacles. "El Salvador was trying to run before it could walk," said cryptocurrency analyst Alex Martinez. "The vision was sound, but the execution and timing were problematic."</p>
-      
-      <p>The government has announced a six-month transition period during which Bitcoin will still be accepted for tax payments and by large businesses, after which the country will return exclusively to the US dollar for official transactions.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ac magna non metus facilisis vehicula.</p>
     `,
     likes: 521,
     dislikes: 48,
@@ -189,32 +183,26 @@ export const articles: Article[] = [
   },
   {
     id: "4",
-    title: "This week is a moment of truth for Xi Jinping on deflation",
-    summary: "China's government faces critical economic decisions as deflationary pressures intensify across multiple sectors.",
+    title: "[STUB] Economic Report on China",
+    summary: "Placeholder for an economic analysis article about China's market conditions.",
     category: "China",
     source: {
-      name: "Financial Times",
+      name: "Economic Review",
       logo: "/placeholder.svg",
     },
     publishedAt: "5h ago",
     timeToRead: "5 min read",
-    imageUrl: "/lovable-uploads/d7df9079-09de-4fb8-b35b-4846dfe49205.png",
+    imageUrl: "/placeholder.svg",
     content: `
-      <p>China faces a critical economic juncture this week as President Xi Jinping prepares to address mounting deflationary pressures that threaten the country's growth targets and financial stability.</p>
+      <h2>This is a stub article</h2>
       
-      <p>The National Bureau of Statistics is set to release July's inflation data on Wednesday, with economists forecasting a third consecutive month of negative consumer price growth. Producer prices have already fallen for 21 straight months, putting severe pressure on manufacturing profitability.</p>
+      <p>This is placeholder content for an economic analysis of China's markets. In a real implementation, this would contain actual reporting on economic conditions, policy decisions, and market trends in China.</p>
       
-      <p>"This is becoming an existential challenge for Xi's economic model," said Wei Zhang, chief China economist at Morgan Stanley. "The deflationary spiral is intensifying despite repeated government interventions, suggesting deeper structural issues that can't be solved with conventional stimulus."</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt fringilla ipsum, vel blandit mi volutpat eu. Quisque varius, nisl ac facilisis sodales, velit felis malesuada nibh, id faucibus velit orci at nibh.</p>
       
-      <p>China's property sector, once a primary growth engine, continues to struggle with falling prices and weak sales despite multiple support packages. Consumer spending has remained sluggish, with retail growth falling to 2.7% in June, well below pre-pandemic levels.</p>
+      <p>Fusce vitae dui ac nibh mattis iaculis. Phasellus in magna vitae sem varius commodo ut at diam. Aliquam erat volutpat. Cras sit amet auctor metus.</p>
       
-      <p>The Politburo's economic committee held an emergency session over the weekend, with state media reporting that "extraordinary measures" were being considered. Sources familiar with the discussions indicate that a major fiscal package focusing on direct consumer subsidies and property sector bailouts may be announced as early as Thursday.</p>
-      
-      <p>"Xi is caught between ideological commitments to his 'new development paradigm' and the pressing reality of economic underperformance," said Huang Wei, a senior fellow at the Peterson Institute for International Economics. "The decisions made this week will likely define China's economic trajectory for years to come."</p>
-      
-      <p>International investors are watching closely, with Chinese stocks experiencing unusual volatility in recent sessions. The yuan has weakened to a six-month low against the dollar, prompting intervention from the People's Bank of China.</p>
-      
-      <p>Japan and South Korea have already expressed concerns about potential spillover effects, while U.S. Treasury Secretary Janet Yellen noted that China's deflationary pressure presents "concerning implications for global growth" during a press conference on Monday.</p>
+      <p>Nulla facilisi. Nulla facilisi. Quisque non felis bibendum, venenatis dui non, ultricies ante. Nam dignissim orci mi, at convallis magna tempus sed.</p>
     `,
     likes: 342,
     dislikes: 27,
@@ -223,8 +211,8 @@ export const articles: Article[] = [
   },
   {
     id: "5",
-    title: "AI unleashes a weird new genre of political communication",
-    summary: "Political campaigns increasingly use AI-generated content that blends reality and fiction in concerning ways.",
+    title: "[STUB] AI Technology Trends",
+    summary: "Placeholder for an article about emerging trends in artificial intelligence technology.",
     category: "AI",
     source: {
       name: "Tech Observer",
@@ -234,21 +222,15 @@ export const articles: Article[] = [
     timeToRead: "3 min read",
     imageUrl: "/placeholder.svg",
     content: `
-      <p>A new form of political communication is emerging in the 2024 election cycle, as campaigns increasingly deploy AI-generated content that exists in a gray area between fact and fiction, reality and imagination.</p>
+      <h2>This is a stub article</h2>
       
-      <p>Last week, voters in Michigan received text messages appearing to be from a local news organization, containing a video of what looked like their congressional representative announcing support for a controversial policy. The video, while visually convincing, was entirely AI-generated - the representative had never made such statements.</p>
+      <p>This is placeholder content for an article about AI technology trends. In a real implementation, this would contain actual analysis of emerging AI applications, research breakthroughs, and industry developments.</p>
       
-      <p>"We're seeing the emergence of what I call 'implied reality content,'" explains Dr. Melissa Chen, director of the Digital Democracy Initiative at Stanford University. "It's media that doesn't explicitly claim to be real but is designed to create a psychological impression that's difficult to distinguish from authentic memory."</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse condimentum odio ut dui ultrices, a molestie dui vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
       
-      <p>Unlike obvious deepfakes or parodies, this new genre of political content occupies an uncanny valley where audiences may recognize something is artificial but still absorb the emotional and rhetorical impact as if it were genuine.</p>
+      <p>Cras placerat blandit dui, eu euismod velit volutpat facilisis. In ut arcu id nisi finibus aliquet. Donec ultrices metus eu eleifend tincidunt.</p>
       
-      <p>Political campaigns from both major parties have begun experimenting with these techniques. One presidential campaign recently released an "imaginative scenario" showing their candidate in situations that never occurred but were designed to reinforce campaign narratives about leadership and decisiveness.</p>
-      
-      <p>"The concerning aspect is how these implied realities bypass our normal critical thinking," says technology ethicist James Whittaker. "Even when people consciously know something is AI-generated, research shows the emotional impression often remains uncorrected in memory."</p>
-      
-      <p>Regulators and platform companies are struggling to develop appropriate responses. Meta recently updated its policies to require disclosure of AI-generated political content, but enforcement has proven challenging, particularly for content that presents itself as artistic rather than factual.</p>
-      
-      <p>"We're in uncharted territory where the distinction between campaigning and disinformation is becoming dangerously blurred," warns Chen. "The technology is advancing far faster than our ethical frameworks or regulatory responses."</p>
+      <p>Nulla facilisi. Aliquam luctus, velit a faucibus pulvinar, sem odio elementum nisi, vel malesuada risus nibh nec sem.</p>
     `,
     likes: 678,
     dislikes: 54,
@@ -257,8 +239,8 @@ export const articles: Article[] = [
   },
   {
     id: "6",
-    title: "Alcaraz Defeats Djokovic in Epic Wimbledon Final",
-    summary: "Carlos Alcaraz outplays Novak Djokovic in a thrilling five-set match to claim his second consecutive Wimbledon title.",
+    title: "[STUB] Tennis Match Report",
+    summary: "Placeholder for a report on a recent professional tennis tournament.",
     category: "Tennis",
     source: {
       name: "Sports Center",
@@ -268,17 +250,15 @@ export const articles: Article[] = [
     timeToRead: "5 min read",
     imageUrl: "/placeholder.svg",
     content: `
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in varius nisi. Vivamus finibus, eros non finibus bibendum, nisi ipsum tincidunt velit, at fringilla justo magna eu risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam posuere, metus eget auctor lacinia, nisl mi bibendum libero, in congue eros nunc quis risus.</p>
+      <h2>This is a stub article</h2>
       
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ac magna non metus facilisis vehicula. Donec et nisl vel libero varius imperdiet. Cras vestibulum, nisl eget maximus auctor, leo magna lobortis odio, et interdum mi nulla eu neque. Proin pulvinar lacus at dolor pretium, quis pulvinar nisi sagittis.</p>
+      <p>This is placeholder content for a tennis match report. In a real implementation, this would contain actual coverage of tennis tournaments, player profiles, and analysis of match strategies.</p>
       
-      <p>Praesent tincidunt fringilla ipsum, vel blandit mi volutpat eu. Quisque varius, nisl ac facilisis sodales, velit felis malesuada nibh, id faucibus velit orci at nibh. Fusce vitae dui ac nibh mattis iaculis. Phasellus in magna vitae sem varius commodo ut at diam. Aliquam erat volutpat.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in varius nisi. Vivamus finibus, eros non finibus bibendum, nisi ipsum tincidunt velit, at fringilla justo magna eu risus.</p>
       
-      <p>Cras sit amet auctor metus. Nulla facilisi. Nulla facilisi. Quisque non felis bibendum, venenatis dui non, ultricies ante. Nam dignissim orci mi, at convallis magna tempus sed. Vivamus sodales nisi vestibulum, viverra magna eu, pharetra justo. Ut id sem feugiat, facilisis magna at, tincidunt felis. Suspendisse sit amet vulputate mi.</p>
+      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nullam posuere, metus eget auctor lacinia, nisl mi bibendum libero, in congue eros nunc quis risus.</p>
       
-      <p>Suspendisse condimentum odio ut dui ultrices, a molestie dui vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras placerat blandit dui, eu euismod velit volutpat facilisis. In ut arcu id nisi finibus aliquet. Donec ultrices metus eu eleifend tincidunt. Nulla facilisi. Aliquam luctus, velit a faucibus pulvinar, sem odio elementum nisi, vel malesuada risus nibh nec sem.</p>
-      
-      <p>Proin sit amet mi sit amet nibh commodo bibendum. Etiam in ultrices sapien. Donec eget enim eu ante blandit euismod. Nulla facilisi. Aliquam vel purus vitae magna faucibus dictum. Etiam finibus dui neque, nec gravida metus aliquam eu. In hac habitasse platea dictumst. Fusce fermentum auctor leo, eget euismod ex semper sit amet.</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ac magna non metus facilisis vehicula.</p>
     `,
     likes: 1245,
     dislikes: 35,
