@@ -1,4 +1,3 @@
-
 export interface Article {
   id: string;
   title: string;
@@ -30,7 +29,7 @@ export const articles: Article[] = [
     },
     publishedAt: "41m ago",
     timeToRead: "4 min read",
-    imageUrl: "/lovable-uploads/d3a6fb05-d094-4d7b-ae93-fe9ecc42e69b.png",
+    imageUrl: "/lovable-uploads/c2152bbd-5a61-413e-ad1c-570b7575639d.png",
     content: `
       <p>Officials in both North and South Carolina have declared states of emergency as more than 175 wildfires have engulfed the region, forcing thousands of residents to evacuate their homes.</p>
       
@@ -62,7 +61,7 @@ export const articles: Article[] = [
     },
     publishedAt: "2h ago",
     timeToRead: "3 min read",
-    imageUrl: "/lovable-uploads/b71674f0-a334-4f5a-9cec-a4ae62a604e3.png",
+    imageUrl: "/lovable-uploads/3df1f597-ec39-4ff2-8e89-3032f315a270.png",
     content: `
       <p>The cryptocurrency market experienced a dramatic surge today following an announcement by former President Donald Trump regarding plans to establish a "strategic national crypto reserve" if elected.</p>
       
