@@ -31,8 +31,6 @@ export const articles: Article[] = [
     timeToRead: "10 min read",
     imageUrl: "/lovable-uploads/c2152bbd-5a61-413e-ad1c-570b7575639d.png",
     content: `
-    <h1>The Zen of the Court: Where Tennis Meets Meditation</h1>
-    
     <p>On a crisp autumn morning in the Presidio of San Francisco, where fog settles between eucalyptus trees before dissolving into sunlight, I watch a lone tennis player preparing to serve. He bounces the ball precisely three times—no more, no less. His eyes close momentarily, his breath deepens. When they open again, there's a quality of presence that wasn't there seconds before. Time seems to suspend as he tosses the ball skyward, his body coiling like a spring before unfurling into the serve. The ball crosses the net with a precision that appears effortless, belying the intense concentration beneath it.</p>
     
     <p>This moment—this perfect confluence of attention and action—illuminates the surprising kinship between two seemingly contradictory practices: tennis and meditation. One is dynamic, externally focused, and often competitive; the other is typically still, inward-looking, and non-striving. Yet for those who practice both, the parallels are not just striking but symbiotic. The court, with its white lines and green surface stretching toward the horizon, becomes an extension of the meditation cushion—a laboratory for presence, a dojo for consciousness.</p>
@@ -96,9 +94,7 @@ export const articles: Article[] = [
     publishedAt: "2h ago",
     timeToRead: "7 min read",
     imageUrl: "/lovable-uploads/3df1f597-ec39-4ff2-8e89-3032f315a270.png",
-    content: `
-    <h1>Silicon Dreams and Human Capabilities: Navigating the Economic Frontier of Artificial Intelligence</h1>
-    
+    content: `    
     <p>On a foggy morning in San Francisco's South Park, the sort that wraps the city in a gauzy filter reminiscent of an Instagram preset, Ryan Chen adjusts his posture on a wooden bench. A product manager at an AI startup backed by some of Sand Hill Road's most bullish venture capitalists, Chen begins his day with fifteen minutes of meditation—a practice he adopted during the pandemic. "In the tech world, we're building systems that can process information at speeds we can barely comprehend," he says, opening his eyes. "But the decisions about how we deploy these systems? Those still require human wisdom."</p>
     
     <p>This juxtaposition—between algorithmic efficiency and human judgment—lies at the heart of our global economic reckoning with artificial intelligence. As large language models compose poetry and code with equal facility, as recommendation systems quietly shape our preferences and purchases, and as machine learning algorithms optimize supply chains and predict consumer behavior, we find ourselves at what economists are calling an inflection point in human history. The question is no longer whether AI will transform our economies, but how radically, how quickly, and—most significantly—whom these transformations will benefit.</p>
