@@ -1,3 +1,5 @@
+Demo app: Personalized AI Content Feed
+
 # Welcome to your Lovable project
 
 ## Project info
