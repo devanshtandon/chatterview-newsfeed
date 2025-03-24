@@ -1,3 +1,4 @@
+
 import { Message } from '@anthropic-ai/sdk';
 
 export interface ChatMessage {
@@ -5,14 +6,28 @@ export interface ChatMessage {
   content: string;
 }
 
+// Get API key from environment variable
+const getApiKey = () => {
+  const apiKey = import.meta.env.VITE_ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('Anthropic API key is not configured. Please set VITE_ANTHROPIC_API_KEY environment variable.');
+  }
+  return apiKey;
+};
+
 export async function startConversation(articleContent: string, userMessage: string): Promise<ChatMessage> {
   try {
-    const response = await fetch('/api/chat', {
+    // Direct API call to Anthropic
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-api-key': getApiKey(),
+        'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
+        model: 'claude-3-opus-20240229',
+        max_tokens: 1024,
         messages: [
           {
             role: 'system',
@@ -22,18 +37,20 @@ export async function startConversation(articleContent: string, userMessage: str
             role: 'user',
             content: userMessage
           }
-        ]
+        ],
       }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to start conversation');
+      const errorData = await response.text();
+      console.error('Anthropic API error:', errorData);
+      throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
     return {
       role: 'assistant',
-      content: data.message
+      content: data.content[0].text
     };
   } catch (error) {
     console.error('Error starting conversation:', error);
@@ -43,25 +60,40 @@ export async function startConversation(articleContent: string, userMessage: str
 
 export async function continueConversation(messages: ChatMessage[]): Promise<ChatMessage> {
   try {
-    const response = await fetch('/api/chat', {
+    // Format messages for Anthropic API
+    const formattedMessages = messages.map(msg => ({
+      role: msg.role,
+      content: msg.content
+    }));
+
+    // Direct API call to Anthropic
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-api-key': getApiKey(),
+        'anthropic-version': '2023-06-01',
       },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({
+        model: 'claude-3-opus-20240229',
+        max_tokens: 1024,
+        messages: formattedMessages,
+      }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to continue conversation');
+      const errorData = await response.text();
+      console.error('Anthropic API error:', errorData);
+      throw new Error(`API error: ${response.status}`);
     }
 
     const data = await response.json();
     return {
       role: 'assistant',
-      content: data.message
+      content: data.content[0].text
     };
   } catch (error) {
     console.error('Error continuing conversation:', error);
     throw error;
   }
-} 
+}
