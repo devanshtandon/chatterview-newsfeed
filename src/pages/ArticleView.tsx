@@ -230,7 +230,7 @@ const ArticleView: React.FC = () => {
         </div>
       )}
       
-      <ChatBar articleId={id || ''} />
+      <ChatBar articleId={id || ''} articleContent={article.content} />
     </div>
   );
 };
